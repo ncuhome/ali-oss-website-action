@@ -25,11 +25,11 @@ inputs:
     required: false
     default: 'false'
   indexPage:
-    description: 'default page, e.g.: index.html'
+    description: 'default page, e.g. index.html'
     required: false
     default: 'index.html'
   errorPage:
-    description: 'error page, e.g.: '404.html''
+    description: 'error page, e.g. 404.html'
     required: false
     default: '404.html'
 runs:
