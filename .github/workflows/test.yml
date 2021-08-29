@@ -1,0 +1,27 @@
+name: Local Action Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Test local oss upload action
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Upload files to Aliyun OSS
+        uses: ./ # Uses an action in the root directory
+        id: upload
+        with:
+          folder: example
+          accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
+          accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
+          bucket: ncuhome-zebwu-test
+          endpoint: oss-cn-hangzhou.aliyuncs.com
+          cname: zebwu.ncuos.com
+
