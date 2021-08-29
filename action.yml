@@ -1,0 +1,41 @@
+name: 'ali-oss-website-action'
+description: 'Deploy your website to aliyun OSS, auto create buckets'
+author: 'Zeb Wu <wzb3422@gmail.com>'
+branding:
+  icon: 'upload'
+  color: 'gray-dark'
+inputs:
+  folder:
+    description: 'The folder to be uploaded'
+    required: true
+  exclude:
+    description: 'TODO: Exclude file from the folder'
+    required: false
+  accessKeyId:
+    description: 'Aliyun accessKeyId.'
+    required: true
+  accessKeySecret:
+    description: 'Aliyun accessKeySecret.'
+    required: true
+  bucket:
+    description: 'Name of OSS bucket, one would be created if no corresponding bucket is found'
+    required: true
+  endpoint:
+    description: 'Endpoint of OSS bucket'
+    required: true
+  cname:
+    description: 'Specify your CNAME target'
+    required: false
+    default: 'false'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    ACCESS_KEY_ID: ${{ inputs.accessKeyId }}
+    ACCESS_KEY_SECRET: ${{ inputs.accessKeySecret }}
+    BUCKET: ${{ inputs.bucket }}
+    ENDPOINT: ${{ inputs.endpoint }}
+    CNAME: ${{ inputs.cname }}
+    FOLDER: ${{ inputs.folder }}
+    EXCLUDE: ${{ inputs.exclude }}
+    REGION: ${{ inputs.region }}
