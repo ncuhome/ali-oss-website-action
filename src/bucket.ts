@@ -16,7 +16,6 @@ async function isBucketExist(client: OSS): Promise<boolean> {
   let exist = true;
   try {
     const ret = await client.getBucketInfo(BUCKET);
-    console.log('Got BucketInfo', ret);
   } catch (e) {
     const code = (e as any).code;
     if (code === 'NoSuchBucket') {
