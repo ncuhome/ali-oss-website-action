@@ -8,9 +8,6 @@ inputs:
   folder:
     description: 'The folder to be uploaded'
     required: true
-  exclude:
-    description: 'TODO: Exclude file from the folder'
-    required: false
   accessKeyId:
     description: 'Aliyun accessKeyId.'
     required: true
@@ -27,6 +24,14 @@ inputs:
     description: 'Specify your CNAME target'
     required: false
     default: 'false'
+  indexPage:
+    description: 'default page, e.g.: index.html'
+    required: false
+    default: 'index.html'
+  errorPage:
+    description: 'error page, e.g.: '404.html''
+    required: false
+    default: '404.html'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -39,3 +44,5 @@ runs:
     FOLDER: ${{ inputs.folder }}
     EXCLUDE: ${{ inputs.exclude }}
     REGION: ${{ inputs.region }}
+    INDEX_PAGE: ${{ inputs.indexPage }}
+    ERROR_PAGE: ${{ inputs.errorPage }}
