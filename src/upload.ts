@@ -6,7 +6,6 @@ import { getEnv } from './env';
 import chalk from "chalk";
 
 export function getUploadCallback(client: OSS, base: string): walkdirCallback {
-  console.log('Current working Directory is', process.env);
 
   let callback: walkdirCallback = async (filepath) => {
     if (fs.lstatSync(filepath).isFile()) {

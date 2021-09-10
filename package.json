@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node ./dist/index.js",
+    "start": "node ./dist/index.js",
     "dev": "NODE_ENV=development node ./dist/index.js",
-    "build": "rm -rf dist/ && ncc build src/index.ts --license licenses.txt"
+    "build": "rm -rf dist/ && ncc build src/index.ts -m --license licenses.txt"
   },
   "keywords": [],
   "author": "",
