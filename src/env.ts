@@ -1,14 +1,11 @@
 import process from 'process';
 
 interface Envs extends NodeJS.ProcessEnv {
+  FOLDER: string;
   ACCESS_KEY_ID: string;
   ACCESS_KEY_SECRET: string;
   BUCKET: string;
   ENDPOINT: string;
-  REGION: string;
-  CNAME: string;
-  FOLDER: string;
-  EXCLUDE: string;
 }
 
 export function getEnv(name: string): string

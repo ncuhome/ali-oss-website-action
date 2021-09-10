@@ -1,11 +1,15 @@
 import OSS from 'ali-oss';
+import { getOSSClient } from './client';
 import { getEnv } from './env';
 
-export async function useBucket(client: OSS): Promise<OSS> {
+export async function useBucket(): Promise<OSS> {
+  const client = getOSSClient();
+
   const exist =  await isBucketExist(client);
   if (!exist) {
     await createBucket(client);
   }
+
   // use the BUCKET as default;
   client.useBucket(getEnv('BUCKET'));
   return client;
