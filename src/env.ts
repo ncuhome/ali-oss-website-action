@@ -6,6 +6,9 @@ interface Envs extends NodeJS.ProcessEnv {
   INPUT_ACCESSKEYSECRET: string;
   INPUT_BUCKET: string;
   INPUT_ENDPOINT: string;
+  INPUT_CONFIGUREWEBSITE?: string;
+  INPUT_INDEXPAGE?: string;
+  INPUT_404PAGE?: string;
 }
 
 export function getEnv(): Envs {

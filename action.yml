@@ -20,6 +20,17 @@ inputs:
   endpoint:
     description: 'Endpoint of OSS bucket'
     required: true
+  configureWebsite:
+    description: 'Configure OSS website settings'
+    required: false
+    default: 'false'
+  indexPage:
+    description: 'Index page of OSS website'
+    required: false
+    default: 'index.html'
+  404Page:
+    description: '404 Not Found page of OSS website'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
