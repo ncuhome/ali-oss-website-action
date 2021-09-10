@@ -1,5 +1,8 @@
 # ali-oss-website-action
 
+![status](https://github.com/ncuhome/ali-oss-website-action/actions/workflows/test.yml/badge.svg)
+
+
 快速部署你的网站至阿里云 OSS。
 
 ## Why this one？
