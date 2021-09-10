@@ -12,7 +12,7 @@
     "stripInternal": true,
     "skipLibCheck": true,
     "pretty": true,
-    "declaration": true,
+    "declaration": false,
     "outDir": "dist",
     "inlineSources": true,
     "resolveJsonModule": true,
