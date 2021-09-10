@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/ali-oss": "^6.0.10",
     "@types/node": "^16.7.4",
-    "@vercel/ncc": "^0.31.0"
+    "@vercel/ncc": "^0.31.0",
+    "husky": "^7.0.2"
   }
 }
