@@ -17,9 +17,11 @@
 // TODO
 
 ## Roadmap
-- [ ] 增量更新，上传加速
-- [ ] 自动配置 dns 解析
+> order listed by priority
+- [x] 配置静态页面
 - [ ] 回源与缓存策略配置
+- [ ] 自动配置 dns 解析
+- [ ] 增量更新，上传加速
 - [ ] 版本控制与快速回滚
 
 ## License
