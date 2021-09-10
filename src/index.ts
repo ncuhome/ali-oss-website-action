@@ -6,7 +6,6 @@ import * as core from '@actions/core';
 process.env.NODE_ENV === 'development' && dotenv.config();
 
 const main = async () => {
-  console.log('ENV', process.env);
   try {
     const store = await useBucket();
     await uploadFolder(store);
