@@ -6,7 +6,7 @@ export async function configOSSWebsite(client: OSS) {
   if (INPUT_CONFIGUREWEBSITE?.toUpperCase() === 'TRUE') {
     let config: OSS.PutBucketWebsiteConfig = {
       index: INPUT_INDEXPAGE!,
-      error: INPUT_404PAGE,
+      error: INPUT_404PAGE
     };
     await client.putBucketWebsite(INPUT_BUCKET, config)
   }
