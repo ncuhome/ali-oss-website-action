@@ -17,13 +17,25 @@
 
 ## 开始使用
 
-// TODO
+在你的 `.github/workflows` 配置中，添加以下内容。
+
+```yml
+- name: Upload website to Aliyun OSS
+  uses: ncuhome/ali-oss-website-action
+  id: upload
+  with:
+    folder: <folder name> # 待上传的文件夹
+    accessKeyId: ${{ secrets.ACCESSKEYID }} ## 通过 secrets 注入 ak
+    accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}
+    bucket: <bucket name> # 要上传到的 bucket, 若不存在会自动新建
+    endpoint: oss-cn-hangzhou.aliyuncs.com # 指定区域的 oss endpoint
+```
 
 ## Roadmap
 > order listed by priority
 - [x] 配置静态页面
-- [ ] 回源与缓存策略配置
-- [ ] 自动配置 dns 解析
+- [ ] 缓存策略配置
+- [ ] 自动配置 CDN 与 DNS 解析
 - [ ] 增量更新，上传加速
 - [ ] 版本控制与快速回滚
 
