@@ -23,5 +23,4 @@ jobs:
           accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
           bucket: ncuhome-zebwu-test
           endpoint: oss-cn-hangzhou.aliyuncs.com
-          cname: zebwu.ncuos.com
 

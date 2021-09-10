@@ -20,29 +20,12 @@ inputs:
   endpoint:
     description: 'Endpoint of OSS bucket'
     required: true
-  cname:
-    description: 'Specify your CNAME target'
-    required: false
-    default: 'false'
-  indexPage:
-    description: 'default page, e.g. index.html'
-    required: false
-    default: 'index.html'
-  errorPage:
-    description: 'error page, e.g. 404.html'
-    required: false
-    default: '404.html'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
+    FOLDER: ${{ inputs.folder }}
     ACCESS_KEY_ID: ${{ inputs.accessKeyId }}
     ACCESS_KEY_SECRET: ${{ inputs.accessKeySecret }}
     BUCKET: ${{ inputs.bucket }}
     ENDPOINT: ${{ inputs.endpoint }}
-    CNAME: ${{ inputs.cname }}
-    FOLDER: ${{ inputs.folder }}
-    EXCLUDE: ${{ inputs.exclude }}
-    REGION: ${{ inputs.region }}
-    INDEX_PAGE: ${{ inputs.indexPage }}
-    ERROR_PAGE: ${{ inputs.errorPage }}
