@@ -13,7 +13,6 @@ jobs:
         # load repo to /github/workspace
       - uses: actions/checkout@v2
         with:
-          repository: ncuhome/ali-oss-website-action
           fetch-depth: 0
       - name: Upload files to Aliyun OSS
         uses: ./ # Uses an action in the root directory
