@@ -5,6 +5,6 @@ import { getEnv } from './env';
 export async function performTasks(client: OSS) {
   const { INPUT_CONFIGUREWEBSITE } = getEnv();
 
-  if (INPUT_CONFIGUREWEBSITE?.toUpperCase() === 'TRUE')
+  if ((INPUT_CONFIGUREWEBSITE as string).toUpperCase() === 'TRUE')
     await configOSSWebsite(client);
 }
