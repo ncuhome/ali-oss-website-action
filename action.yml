@@ -27,7 +27,6 @@ inputs:
   indexPage:
     description: 'Index page of OSS website'
     required: false
-    default: 'index.html'
   404Page:
     description: '404 Not Found page of OSS website'
     required: false
