@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production ts-node ./src/index.ts",
-    "dev": "NODE_ENV=development ts-node ./src/index.ts",
-    "build": "tsc"
+    "start": "NODE_ENV=production node ./dist/index.js",
+    "dev": "NODE_ENV=development node ./dist/index.js",
+    "build": "rm -rf dist/ && ncc build src/index.ts --license licenses.txt"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@types/ali-oss": "^6.0.10",
-    "@types/node": "^16.7.4"
+    "@types/node": "^16.7.4",
+    "@vercel/ncc": "^0.31.0"
   }
 }
