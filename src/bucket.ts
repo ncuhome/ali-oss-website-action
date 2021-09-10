@@ -11,15 +11,15 @@ export async function useBucket(): Promise<OSS> {
   }
 
   // use the BUCKET as default;
-  client.useBucket(getEnv('BUCKET'));
+  client.useBucket(getEnv().INPUT_BUCKET);
   return client;
 }
 
 async function isBucketExist(client: OSS): Promise<boolean> {
-  const { BUCKET } = getEnv()
+  const { INPUT_BUCKET } = getEnv()
   let exist = true;
   try {
-    const ret = await client.getBucketInfo(BUCKET);
+    const ret = await client.getBucketInfo(INPUT_BUCKET);
   } catch (e) {
     const code = (e as any).code;
     if (code === 'NoSuchBucket') {
@@ -32,8 +32,8 @@ async function isBucketExist(client: OSS): Promise<boolean> {
 }
 
 async function createBucket(client: OSS) {
-  const { BUCKET } = getEnv();
-  const { res, bucket } = await client.putBucket(BUCKET);
+  const { INPUT_BUCKET } = getEnv();
+  const { res, bucket } = await client.putBucket(INPUT_BUCKET);
   if (res.status === 200) {
     console.log(`✌️ Successfully create Bucket: ${bucket}`);
   } else {

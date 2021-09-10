@@ -2,13 +2,13 @@ import OSS from 'ali-oss';
 import { getEnv } from './env';
 
 export const getOSSClient = (): OSS => {
-  const { ACCESS_KEY_ID, ACCESS_KEY_SECRET, BUCKET, ENDPOINT } = getEnv();
+  const { INPUT_ACCESSKEYID, INPUT_ACCESSKEYSECRET, INPUT_BUCKET, INPUT_ENDPOINT } = getEnv();
 
   const client = new OSS({
-    accessKeyId: ACCESS_KEY_ID,
-    accessKeySecret: ACCESS_KEY_SECRET,
-    endpoint: ENDPOINT,
-    bucket: BUCKET,
+    accessKeyId: INPUT_ACCESSKEYID,
+    accessKeySecret: INPUT_ACCESSKEYSECRET,
+    endpoint: INPUT_ENDPOINT,
+    bucket: INPUT_BUCKET,
   });
   return client;
 }
