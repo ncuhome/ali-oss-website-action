@@ -24,6 +24,7 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   env:
+    # folder in /github/workspace
     FOLDER: ${{ inputs.folder }}
     ACCESS_KEY_ID: ${{ inputs.accessKeyId }}
     ACCESS_KEY_SECRET: ${{ inputs.accessKeySecret }}
