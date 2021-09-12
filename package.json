@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "dev": "tsc && NODE_ENV=development node ./dist/index.js",
-    "build": "rm -rf dist/ && ncc build src/index.ts -m --license licenses.txt"
+    "build": "rm -rf dist/ && ncc build src/index.ts -m --license licenses.txt",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
