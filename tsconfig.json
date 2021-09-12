@@ -17,7 +17,8 @@
     "inlineSources": true,
     "resolveJsonModule": true,
     "strictNullChecks": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types/", "./typings"],
   },
   "exclude": [
     "dist",
@@ -26,5 +27,5 @@
   ],
   "include": [
     "src/**/*"
-  ]
+, "typings"  ]
 }

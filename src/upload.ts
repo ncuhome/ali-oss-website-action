@@ -17,7 +17,9 @@ export function getUploadCallback(client: OSS, base: string): walkdirCallback {
 }
 
 export async function uploadFolder(client: OSS) {
+  console.log(chalk.green('Start uploading files'));
   const uploadBase = path.resolve(process.cwd(), getEnv().INPUT_FOLDER);
   const callback = getUploadCallback(client, uploadBase);
   const result = await walkdir(uploadBase, callback);
+  console.log(chalk.green('Finish uploading'));
 }
