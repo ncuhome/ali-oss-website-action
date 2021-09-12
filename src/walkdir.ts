@@ -14,10 +14,10 @@ export async function walkdir(dirPath: string, callback?: walkdirCallback): Prom
       filepaths = filepaths.concat(await walkdir(fullPath, callback));
     } else if (fs.lstatSync(fullPath).isFile()) {
       filepaths.push(fullPath);
-    }
 
-    if (callback) {
-      await callback(fullPath);
+      if (callback) {
+        await callback(fullPath);
+      }
     }
   }
   return filepaths;

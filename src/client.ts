@@ -1,5 +1,5 @@
 import OSS from 'ali-oss';
-import { getEnv } from './env';
+import { getEnv } from './constants';
 
 export const getOSSClient = (): OSS => {
   const { INPUT_ACCESSKEYID, INPUT_ACCESSKEYSECRET, INPUT_BUCKET, INPUT_ENDPOINT } = getEnv();

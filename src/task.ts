@@ -1,6 +1,6 @@
 import OSS from "ali-oss";
 import { configOSSWebsite } from './website';
-import { getEnv } from './env';
+import { getEnv } from './constants';
 
 export async function performTasks(client: OSS) {
   const { INPUT_CONFIGUREWEBSITE } = getEnv();
