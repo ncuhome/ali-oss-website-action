@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/index.js",
-    "dev": "NODE_ENV=development node ./dist/index.js",
-    "dev:ts": "NODE_ENV=development ts-node ./src/index.ts",
+    "dev": "tsc && NODE_ENV=development node ./dist/index.js",
     "build": "rm -rf dist/ && ncc build src/index.ts -m --license licenses.txt"
   },
   "keywords": [],
