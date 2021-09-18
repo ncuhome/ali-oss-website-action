@@ -35,10 +35,11 @@
 ## Roadmap
 > order listed by priority
 - [x] 配置静态页面
-- [ ] 缓存策略配置
 - [ ] 自动配置 CDN 与 DNS 解析
-- [ ] 增量更新，上传加速
+- [x] 增量更新，上传加速
+- [ ] 缓存策略配置
 - [ ] 版本控制与快速回滚
+- [ ] 忽略特定的文件，遵循 .gitignore 语法
 
 ## License
 
