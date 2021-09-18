@@ -1,6 +1,6 @@
 import OSS from 'ali-oss';
 import { getOSSClient } from './client';
-import { getEnv } from './constants';
+import { getEnv } from './utils/env';
 
 export async function useBucket(): Promise<OSS> {
   const client = getOSSClient();

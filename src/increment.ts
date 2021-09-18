@@ -1,7 +1,7 @@
 import { sync as MD5Sync } from "md5-file";
 import { walkdir, walkdirCallback } from "./walkdir";
-import { uploadBase, DO_NOT_DELETE_MD5MAP_JSON } from "./constants";
-import { writeFileSync } from "fs";
+import { uploadBase } from "./utils/path";
+import { DO_NOT_DELETE_MD5MAP_JSON } from './utils/env';
 import OSS from "ali-oss";
 import path from "path";
 import chalk from "chalk";

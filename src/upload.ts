@@ -1,6 +1,8 @@
 import OSS from "ali-oss";
-import { uploadBase, getRelativePath, getEnv, truthyEnv, DO_NOT_DELETE_MD5MAP_JSON } from './constants';
+import { uploadBase, getRelativePath } from './utils/path';
+import { getEnv, booleanTrueEnv } from './utils/env'
 import { walkdir } from './walkdir';
+import { DO_NOT_DELETE_MD5MAP_JSON } from './utils/env';
 import { getChangedFiles, generateMD5Map } from './increment';
 import chalk from "chalk";
 
@@ -19,7 +21,7 @@ export async function uploadByPaths(client: OSS, filepaths: string[]) {
 
 export async function uploadFolder(client: OSS) {
   const { INPUT_INCREMENTAL } = getEnv();
-  const incremental = truthyEnv(INPUT_INCREMENTAL);
+  const incremental = booleanTrueEnv(INPUT_INCREMENTAL);
 
   console.log(`Start uploading files, incremental: ${incremental}`);
 
