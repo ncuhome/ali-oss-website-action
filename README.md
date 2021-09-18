@@ -29,6 +29,7 @@
     accessKeySecret: ${{ secrets.ACCESSKEYSECRET }}
     bucket: <bucket name> # 要上传到的 bucket, 若不存在会自动新建
     endpoint: oss-cn-hangzhou.aliyuncs.com # 指定区域的 oss endpoint
+    incremental: true # 开启增量上传，只上传 md5 值变化、新增、删除 的文件
 ```
 
 ## Roadmap
