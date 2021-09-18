@@ -1,5 +1,5 @@
 import OSS, { PutBucketWebsiteConfig } from "ali-oss";
-import { getEnv } from "./constants";
+import { getEnv } from "./utils/env";
 
 export async function configOSSWebsite(client: OSS) {
   const { INPUT_BUCKET, INPUT_INDEXPAGE, INPUT_404PAGE } = getEnv();

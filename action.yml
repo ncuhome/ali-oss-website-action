@@ -33,6 +33,9 @@ inputs:
   incremental:
     description: 'Incrementally upload files, only upload changed files'
     required: false
+  cname:
+    description: 'CNAME domain'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
