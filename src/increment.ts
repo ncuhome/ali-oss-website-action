@@ -2,7 +2,7 @@ import { sync as MD5Sync } from "md5-file";
 import { walkdir, walkdirCallback } from "./walkdir";
 import { uploadBase, DO_NOT_DELETE_MD5MAP_JSON } from "./constants";
 import { writeFileSync } from "fs";
-import OSS from 'ali-oss'
+import OSS from "ali-oss";
 import path from "path";
 import chalk from "chalk";
 
@@ -17,14 +17,19 @@ export async function generateMD5Map() {
   return map;
 }
 
-export async function getChangedFiles(client: OSS, currentMap: MD5Map): Promise<string[]> {
+export async function getChangedFiles(
+  client: OSS,
+  currentMap: MD5Map
+): Promise<string[]> {
   let previousMap: MD5Map = {};
   const files: string[] = [];
   try {
     const result = await client.get(DO_NOT_DELETE_MD5MAP_JSON);
-    previousMap = JSON.parse(String.prototype.toString.call(result.content));
+    console.log(chalk.green(`${DO_NOT_DELETE_MD5MAP_JSON} is Detected`));
+    const data = result.content.toString();
+    previousMap = JSON.parse(data);
   } catch (e) {
-    console.log(chalk.yellow(`${DO_NOT_DELETE_MD5MAP_JSON} is NOT FOUND`));
+    console.error(e);
   }
 
   for (const [filepath, hash] of Object.entries(currentMap)) {
@@ -41,6 +46,8 @@ export async function getChangedFiles(client: OSS, currentMap: MD5Map): Promise<
     }
   }
 
-  console.log(`Detect changed files`, files);
+  files.length
+    ? console.log(`Detect ${files.length} changed files`, files)
+    : console.log("No file changed");
   return files;
 }
